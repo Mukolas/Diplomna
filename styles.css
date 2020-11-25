@@ -1,0 +1,99 @@
+body{
+    background-image: url('Fon.jpg');
+display: table;
+}
+/* головне меню */
+.menu{
+    display: inline-block;
+    border: 2px solid black;
+    border-radius: 10px;
+    margin: 250px;
+    margin-top: 0%;
+    margin-bottom: 1%;
+    padding: 10px;
+    padding-left: 100px;
+    padding-right: 100px;
+    background-color:rgba(36, 92, 212, 0.705);   
+    
+    
+
+}
+/* головна дів на кожній сторінці */
+.mainDiv{
+    display: inline-block;
+    background-color:rgba(245, 245, 245, 0.705) ;
+    border: 2px solid rgb(0, 0, 0);
+    border-radius: 10px;
+    margin-left: 100px;
+    margin-right: 100px;
+    margin-top: 10px;
+    padding: 10px;
+}
+/* відображення посилань в меню */
+.menu a{
+    font-size: 30px;
+    margin: 50px;
+    text-decoration:none;
+    color: rgb(255, 136, 0);
+}
+/* Вікно вибору категорій*/
+.menuKategory{
+    display: inline-block;
+    padding: 5px;
+    margin-left: 250px;
+    border: 2px solid black;
+    border-radius: 10px;
+    background-color: white;
+}
+/*Самі категорії */
+.kategory{
+    display: none;
+    padding: 5px;
+    margin: 10px;
+    
+}
+/* фон сторінки */
+body{
+    background-color: blanchedalmond;
+}
+/* Як виглядають елементи категорій*/
+.kategory p{
+    padding: 20px;
+    border: 1px solid blue ;
+    border-radius: 10px ;
+   
+}
+/* блок товарів в ППТ */
+.mainDivOne{
+    display: inline-block;
+    padding: 10px;
+    border: 2px solid black;
+    border-radius: 10px;
+    
+    
+}
+/* блок товарів в ПГТ*/
+.mainDivTwo{
+    display: none;
+    border: 2px solid black;
+}
+/*Блок товарів в ЗБТ */
+.mainDivThree{
+    display: none;
+    border: 2px solid black;
+}
+/* картинки в товарах*/
+img{
+    width: 250px;
+    height: 200px;
+}
+
+.korzyna img{
+    display: none;
+    width: 100px;
+    height: 100px;
+    padding: 10px;
+    position: fixed;
+    top: 80%;
+    left: 0px;
+}
