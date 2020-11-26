@@ -38,30 +38,35 @@ let skladPPT=[
 towar={
     imege: 'https://img01.flagma.ua/photo/ognetushitel-op-5-12081951_medium.jpg' ,
     name: "vognegasnik AF-3000",
+    type: 'Вогнегасник',
     cost: 300
 }
 ,
 towar={
     imege: 'https://torgeat.ru/goodimg/_eat/52/832252/98/4716898-ognetushitel-op-4.jpeg' ,
     name: "vognegasnik ARos-5",
+    type: 'Вогнегасник',
     cost: 500
 }
 ,
 towar={
     imege: 'https://cdn.shopify.com/s/files/1/0442/5567/4523/products/IMG_1670_1024x1024@2x.jpg?v=1599839033' ,
     name: "Шланг червоний ТТ-200",
+    type: 'Шланг',
     cost: 150
 }
 ,
 towar={
     imege: 'https://101.net.ua/image/cache/800-700/data/new2019/setka-vsasyvayushchaya-sv-80-2306.png' ,
     name: "Сітка всмоктуюча",
+    type: 'Сітка',
     cost: 700
 }
 ,
 towar={
     imege: 'https://101.net.ua/image/cache/800-700/data/new2019/verevka-pozharnaya-spasatelnaya-vps-50-2375.jpg' ,
     name: "Шнур рятувальний",
+    type: 'Шнур',
     cost: 450   
 }
 
@@ -74,7 +79,7 @@ towar={
      let mistsePPT = document.createElement('div');
      mistsePPT.style.display='inline-block'
      mistsePPT.style.width = '257px';
-     mistsePPT.style.height ='310px';
+     mistsePPT.style.height ='340px';
      mistsePPT.style.backgroundColor ='white';
      mistsePPT.style.border ='2px solid black';
      mistsePPT.style.margin='3px';
@@ -82,7 +87,7 @@ towar={
      mistsePPT.style.padding='6px';
      mistsePPT.style.float='left';
      mainDivOne.appendChild(mistsePPT);
-     mistsePPT.innerHTML = `<img src=${ skladPPT[i].imege}><br> Назва: ${skladPPT[i].name} <br> Ціна: ${skladPPT[i].cost} <br> `;
+     mistsePPT.innerHTML = `<img src=${ skladPPT[i].imege}><br> Назва: ${skladPPT[i].name} <br> Тип: ${skladPPT[i].type} <br> Ціна: ${skladPPT[i].cost} <br> `;
      /* Інпут*/
      let numb = document.createElement('input');
      numb.style.float='left';
@@ -93,7 +98,7 @@ towar={
      numb.style.width='50px'
      numb.style.margin='5px';
      mistsePPT.appendChild(numb);
-
+     /*Блок який рахує вартість товарів */
      let razom = document.createElement('div');
     razom.style.display='inline-block';
      razom.value=1;
@@ -101,19 +106,27 @@ towar={
      razom.style.width='170px'
      razom.style.margin='5px';
      razom.style.color='orange';
+     razom.style.textDecoration='underline';
      razom.innerHTML=('Разом: '+numb.value*skladPPT[i].cost);
-     let r =skladPPT[i].cost;
+     /*переоголошуєм змінні */
+     let cost =skladPPT[i].cost;
+     let type = skladPPT[i].type;
+     let name = skladPPT[i].name;
+     let tow = skladPPT[i];
+     /*функції при зміні кількості товару */
      numb.onkeyup=function () {
-         razom.innerHTML = ('Разом: ' + numb.value * r);
-         if(numb.value*r>r){
+        razomcost= numb.value * cost;
+         razom.innerHTML = ('Разом: ' + razomcost);
+         if(numb.value*cost>cost){
             razom.style.color='red';
             }else{
                 razom.style.color='orange';
             }
      }
      numb.onmouseup=function () {
-        razom.innerHTML = ('Разом: ' + numb.value * r);
-        if(numb.value*r>r){
+         razomcost= numb.value * cost;
+        razom.innerHTML = ('Разом: ' + razomcost);
+        if(numb.value*cost>cost){
         razom.style.color='red';
         }else{
             razom.style.color='orange';
@@ -132,6 +145,8 @@ towar={
      some.innerHTML='В корзину';
      some.style.color='white';
      some.style.padding='10px';
+     some.style.margin='5px';
+     some.style.marginTop='10px';
      mistsePPT.appendChild(some);
      some.onmouseover=()=>{
          some.style.color='yellow';
@@ -139,9 +154,36 @@ towar={
      some.onmouseout=()=>{
         some.style.color='white';
      }
+     /* Записуємо данні при кліці на кнопку В Корзину*/
+     klick=0;
+     let towaryWKoshiku =document.getElementById('towaryWKoshiku');
       some.onclick=()=>{
+          klick++;
       korzynaImg.style.display='table';
+      console.log(tow);
+      localStorage.setItem(`towar${klick}- Name`, name);
+      localStorage.setItem(`towar${klick}- Type`,type);
+      localStorage.setItem(`towar${klick}- Kilkist`,numb.value);
+      localStorage.setItem(`towar${klick}- Cost`,numb.value*cost);
+      /* заповнюємо корзину блоками товарів ,в яких містиця інформація про товар */
+      let towform = document.createElement('div');
+      towform.style.width='430px';
+      towform.style.height='90px';
+      towform.style.border='2px solid black';
+      towform.style.borderRadius='10px';
+      towform.style.marginBottom='5px';
+      towform.style.padding='5px';
+      towform.innerHTML= `Назва: ${localStorage.getItem('towar'+klick+'- Name')} <br> Тип: ${localStorage.getItem('towar'+klick+'- Type')} <br> Кількість: ${localStorage.getItem('towar'+klick+'- Kilkist')} <br> Ціна за товар: ${localStorage.getItem('towar'+klick+'- Cost')} `;
+      towaryWKoshiku.appendChild(towform);
+      /*При кліці на значок корзини - показує форму покупки */
       }
+      let form = document.getElementById('Form');
+     korzyna.onclick=()=>{
+         form.style.display='inline-block';
+         
+         
+     }
+
     }
     
 
