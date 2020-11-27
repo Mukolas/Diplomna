@@ -151,6 +151,7 @@ towar={
      some.onmouseover=()=>{
          some.style.color='yellow';
      }
+    
      some.onmouseout=()=>{
         some.style.color='white';
      }
@@ -160,11 +161,11 @@ towar={
       some.onclick=()=>{
           klick++;
       korzynaImg.style.display='table';
-      console.log(tow);
       localStorage.setItem(`towar${klick}- Name`, name);
       localStorage.setItem(`towar${klick}- Type`,type);
       localStorage.setItem(`towar${klick}- Kilkist`,numb.value);
       localStorage.setItem(`towar${klick}- Cost`,numb.value*cost);
+      localStorage.setItem(`towar${klick}`,'-----------------------------------------------------');
       /* заповнюємо корзину блоками товарів ,в яких містиця інформація про товар */
       let towform = document.createElement('div');
       towform.style.width='430px';
@@ -174,16 +175,70 @@ towar={
       towform.style.marginBottom='5px';
       towform.style.padding='5px';
       towform.innerHTML= `Назва: ${localStorage.getItem('towar'+klick+'- Name')} <br> Тип: ${localStorage.getItem('towar'+klick+'- Type')} <br> Кількість: ${localStorage.getItem('towar'+klick+'- Kilkist')} <br> Ціна за товар: ${localStorage.getItem('towar'+klick+'- Cost')} `;
-      towaryWKoshiku.appendChild(towform);
-      /*При кліці на значок корзини - показує форму покупки */
+      /* Створюєм кнопу видалити з Товарів */
+      let buttonDelete = document.createElement('button');
+      buttonDelete.textContent='❌';
+      buttonDelete.personalId=klick; // присвоєння кожній кнопці видалити - персональний номер
+      buttonDelete.style.paddingLeft='1px';
+      buttonDelete.style.float='right';
+      buttonDelete.style.marginTop='-60px';
+      buttonDelete.style.height='23px';
+      buttonDelete.style.width='25px';
+      towform.appendChild(buttonDelete);
+
+      towaryWKoshiku.appendChild(towform);  
+      /* Видалення при натисканні на кнопку*/
+      buttonDelete.onclick=()=>{
+      localStorage.removeItem('towar'+buttonDelete.personalId+'- Name');
+      localStorage.removeItem('towar'+buttonDelete.personalId+'- Type');
+      localStorage.removeItem('towar'+buttonDelete.personalId+'- Click');
+      localStorage.removeItem('towar'+buttonDelete.personalId+'- Kilkist');
+      localStorage.removeItem('towar'+buttonDelete.personalId+'- Cost');
+      localStorage.removeItem('towar'+buttonDelete.personalId);
+      towaryWKoshiku.removeChild(towform);
       }
+
+    /* При натисканні на кнопку замовити */
+    let zamovyty = document.getElementById('zamovyty');
+    zamovyty.onclick=()=>{
+        if(inputImya.value==''||inputNomer.value==''||inputEmaile.value==''){
+        console.log('Zapovnit vse formy');
+        }else{
+        console.log(inputImya.value);
+        console.log(inputNomer.value);
+        console.log(inputEmaile.value);
+        console.log(localStorage);
+        form.style.display='none';
+        localStorage.clear();
+        }
+        
+    }
+      }
+      /*При кліці на значок корзини - показує форму покупки */
       let form = document.getElementById('Form');
+      let nazaddotowariw = document.getElementById('NazadDoTowariw');
+      let packetyBezp = document.getElementById('packetBezpekiDiv');
      korzyna.onclick=()=>{
          form.style.display='inline-block';
-         
-         
+         nazaddotowariw.style.display='inline-block';
+         mainDivOne.style.display = 'none';
+         packetyBezp.style.display='none';
      }
-
+     /* При наведенні-відведенні від корзини*/
+     korzynaImg.onmouseover=()=>{
+     korzynaImg.src='Korzyna2.png';
+     }
+     korzynaImg.onmouseout=()=>{
+        korzynaImg.src='Korzyna1.png';
+        }
+        /* Кнопка натискання назад до товарів */
+        nazaddotowariw.onclick=()=>{
+            mainDivOne.style.display = 'inline-block';
+            form.style.display ='none';
+            nazaddotowariw.style.display='none';
+            packetyBezp.style.display='inline-block';
+            
+        }
     }
     
 

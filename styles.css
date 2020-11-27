@@ -113,6 +113,20 @@ img{
     background-color: whitesmoke;
     font-size: large;
     font-weight: bolder;
+    float: left;
+}
+/* Кнопка збоку форми яка вертає до товарів*/
+.NazadDoTowariw{
+    display: none;
+    border: 4px solid rgb(0, 0, 0);
+    border-radius: 10px;
+    margin-left: 120px;
+    margin-top: 200px;
+    padding: 10px;
+    background-color: rgba(0, 81, 255, 0.678);
+    color: white;
+    font-size: large;
+    font-weight: bolder;
 
 }
 /*Інпути в формі */
@@ -159,3 +173,4 @@ input {
     border-radius: 10px;
     margin-bottom: 10px;
 }
+
