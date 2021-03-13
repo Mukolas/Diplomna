@@ -7,12 +7,13 @@ display: table;
     display: inline-block;
     border: 2px solid black;
     border-radius: 10px;
-    margin: 250px;
+    margin-left: 50%;
+    margin-right: -5%;
     margin-top: 0%;
     margin-bottom: 1%;
     padding: 10px;
-    padding-left: 100px;
-    padding-right: 100px;
+    padding-left: 0px;
+    padding-right: 0px;
     background-color:rgba(36, 92, 212, 0.705);   
     
     
@@ -26,7 +27,7 @@ display: table;
     background-color:rgba(245, 245, 245, 0.705) ;
     border: 6px solid rgb(0, 0, 0);
     border-radius: 10px;
-    margin-left: 100px;
+    margin-left: 30%;
     margin-right: 100px;
     margin-top: 10px;
     padding: 10px;
@@ -41,8 +42,9 @@ display: table;
 /* Вікно вибору категорій*/
 .menuKategory{
     display: inline-block;
+    position: fixed;
     padding: 5px;
-    margin-left: 250px;
+    margin-left: 10%;
     border: 2px solid black;
     border-radius: 10px;
     background-color: white;
