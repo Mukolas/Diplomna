@@ -193,7 +193,7 @@ width: 100px;
 
 /*Блоки тексту в описі*/
 .Opys{
-    display: inline-block;
+    display: block;
     background-color: rgba(250, 238, 221, 0.61);
     border: 2px solid black;
     padding-left: 2%;
@@ -202,4 +202,37 @@ width: 100px;
     padding-bottom: 1%;
     border-radius: 20px;
 
+}
+
+/* Підвал Опису */
+
+.OpysFooter{
+   
+    margin-left: 30%;
+    width: 1145px;
+    height: auto;
+    background-color:rgba(245, 245, 245, 0.705) ;
+    border: 6px solid rgb(0, 0, 0);
+    border-radius: 10px;
+    margin-left: 30%;
+    margin-right: 100px;
+    margin-top: 10px;
+    padding: 10px;
+    padding-top: 0%;
+}
+
+/*Опис блоків в контактній інформації */
+.footerBlock{
+    display: inline-flex;
+    width: 500px;
+    margin-left: 20px;
+    padding-left: 4%;
+color: red;
+}
+
+/* Опис визначень тесту в підвалі */
+.opysText{
+    padding-right: 4px;
+    color: black;
+   
 }
