@@ -55,7 +55,6 @@ katP3.onmouseout=()=>{
     katP3.style.backgroundColor ='white';
 }
 
-
 /*Склад  товарів */
 let skladPPT=[
 towar={
