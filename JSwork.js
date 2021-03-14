@@ -1,14 +1,16 @@
 /*Наведення-відведення на вікно вибору категорій */ 
 let menukategory = document.getElementById('menuKat');
 let kategory = document.getElementById('kat');
+menukategory.style.backgroundColor= 'rgba(199, 199, 199, 0.84)';
 menukategory.onmouseover=()=>{
     kategory.style.display ='inline-block';
-    menukategory.style.border ='2px solid orange';
+    menukategory.style.border ='6px solid yellow';
 }
 menukategory.onmouseout=()=>{
     kategory.style.display='none';
-    menukategory.style.border ='2px solid black';
+    menukategory.style.border ='3px solid orange';
 }
+
 /*Натискання на категорії */ 
 let katP1 = document.getElementById('katP1');
 let katP2 = document.getElementById('katP2');
@@ -32,48 +34,87 @@ katP3.onclick=()=>{
     mainDivThree.style.display='inline-block';
 }
 
-/*Товари-cклади */
-/*Склад Протипопожежних товарів */
+/*Наведення на самі категорії*/
+katP1.onmouseover=()=>{
+    katP1.style.backgroundColor ='rgba(252, 232, 205, 0.71)';
+}
+katP1.onmouseout=()=>{
+    katP1.style.backgroundColor ='white';
+}
+
+katP2.onmouseover=()=>{
+    katP2.style.backgroundColor ='rgba(210, 252, 205, 0.71)';
+}
+katP2.onmouseout=()=>{
+    katP2.style.backgroundColor ='white';
+}
+katP3.onmouseover=()=>{
+    katP3.style.backgroundColor ='rgba(205, 225, 252, 0.71)';
+}
+katP3.onmouseout=()=>{
+    katP3.style.backgroundColor ='white';
+}
+
+
+/*Склад  товарів */
 let skladPPT=[
 towar={
     imege: 'https://img01.flagma.ua/photo/ognetushitel-op-5-12081951_medium.jpg' ,
     name: "vognegasnik AF-3000",
-    type: 'Вогнегасник',
+    type: 'Протипожежні',
     cost: 300
 }
 ,
 towar={
     imege: 'https://torgeat.ru/goodimg/_eat/52/832252/98/4716898-ognetushitel-op-4.jpeg' ,
     name: "vognegasnik ARos-5",
-    type: 'Вогнегасник',
+    type: 'Протипожежні',
     cost: 500
 }
 ,
 towar={
     imege: 'https://cdn.shopify.com/s/files/1/0442/5567/4523/products/IMG_1670_1024x1024@2x.jpg?v=1599839033' ,
     name: "Шланг червоний ТТ-200",
-    type: 'Шланг',
+    type: 'Протипожежні',
     cost: 150
 }
 ,
 towar={
     imege: 'https://101.net.ua/image/cache/800-700/data/new2019/setka-vsasyvayushchaya-sv-80-2306.png' ,
     name: "Сітка всмоктуюча",
-    type: 'Сітка',
+    type: 'Протипожежні',
     cost: 700
 }
 ,
 towar={
     imege: 'https://101.net.ua/image/cache/800-700/data/new2019/verevka-pozharnaya-spasatelnaya-vps-50-2375.jpg' ,
     name: "Шнур рятувальний",
-    type: 'Шнур',
+    type: 'Протипожежні',
     cost: 450   
 }
-
+,
+    towar={
+        imege: 'https://i2.rozetka.ua/goods/22018079/74602224_images_22018079678.jpg' ,
+        name: "Датчик газу JKD 512COM",
+        type: 'Протигазові',
+        cost: 1000
+    }
+,
+    towar={
+        imege: 'https://i2.rozetka.ua/goods/16513977/ajax_000016461_images_16513977761.jpg' ,
+        name: "Сигналізація Ajax StarterKit",
+        type: 'Загальнобезпечні',
+        cost: 8000
+    },
+    towar={
+        imege: 'https://avpharma.com.ua/wp-content/uploads/2020/01/first-aid-kit-medical-automobile-ama-1-in-a-red-bag-600x600.jpg' ,
+        name: "Автомобільна аптечка AMA-1",
+        type: 'Пакет',
+        cost: 500
+    }
 ]
-/*Склад Противогазових товари */
 
-/*Функція створення ППТ товару */
+/*Функція створення товару */
     
     for(i=0;i<skladPPT.length;i++){
      let mistsePPT = document.createElement('div');
@@ -86,8 +127,17 @@ towar={
      mistsePPT.style.borderRadius ='10px';
      mistsePPT.style.padding='6px';
      mistsePPT.style.float='left';
+     if(skladPPT[i].type =="Протипожежні"){
      mainDivOne.appendChild(mistsePPT);
+     }else if(skladPPT[i].type =="Протигазові"){
+        mainDivTwo.appendChild(mistsePPT);
+     }else if(skladPPT[i].type =="Загальнобезпечні"){
+        mainDivThree.appendChild(mistsePPT);
+     }else if(skladPPT[i].type =="Пакет"){
+        packetBezpekiDiv.appendChild(mistsePPT);
+     }
      mistsePPT.innerHTML = `<img src=${ skladPPT[i].imege}><br> Назва: ${skladPPT[i].name} <br> Тип: ${skladPPT[i].type} <br> Ціна: ${skladPPT[i].cost} <br> `;
+    
      /* Інпут*/
      let numb = document.createElement('input');
      numb.style.float='left';
@@ -224,6 +274,8 @@ towar={
          form.style.display='inline-block';
          nazaddotowariw.style.display='inline-block';
          mainDivOne.style.display = 'none';
+         mainDivTwo.style.display = 'none';
+         mainDivThree.style.display = 'none';
          packetyBezp.style.display='none';
      }
      /* При наведенні-відведенні від корзини*/
@@ -241,6 +293,7 @@ towar={
             packetyBezp.style.display='inline-block';
             
         }
+
     }
     
 
