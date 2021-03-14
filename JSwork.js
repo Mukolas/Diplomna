@@ -256,7 +256,14 @@ towar={
         console.log(inputImya.value);
         console.log(inputNomer.value);
         console.log(inputEmaile.value);
-        console.log(localStorage);
+        for(locI=1;locI<localStorage.length/4;locI++){
+        console.log(localStorage.getItem('towar'+locI+'- Name'));
+        console.log(localStorage.getItem('towar'+locI+'- Type'));
+        console.log(localStorage.getItem('towar'+locI+'- Kilkist'));
+        console.log(localStorage.getItem('towar'+locI+'- Cost'));
+        console.log(localStorage.getItem('towar'+locI));
+
+        }
         form.style.display='none';
         localStorage.clear();
         }
