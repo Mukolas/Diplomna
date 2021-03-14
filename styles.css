@@ -176,3 +176,30 @@ input {
     margin-bottom: 10px;
 }
 
+
+
+
+/* Cторінка Опис */
+
+
+
+/* Картинка головного зображення*/
+.MainEmblemImg{
+width: 100px;
+    height: 400px;
+    width: 400px;
+  margin-left: 32%;
+}
+
+/*Блоки тексту в описі*/
+.Opys{
+    display: inline-block;
+    background-color: rgba(250, 238, 221, 0.61);
+    border: 2px solid black;
+    padding-left: 2%;
+    padding-right: 2%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    border-radius: 20px;
+
+}
