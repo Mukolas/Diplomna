@@ -253,12 +253,10 @@ towar={
         if(inputImya.value==''||inputNomer.value==''||inputEmaile.value==''){
         console.log('Zapovnit vse formy');
         }else{
-            let mainForm = document.getElementById("lastForm");
         console.log(inputImya.value);
         console.log(inputNomer.value);
         console.log(inputEmaile.value);
         console.log(localStorage);
-        console.log(mainForm);
         form.style.display='none';
         localStorage.clear();
         }
