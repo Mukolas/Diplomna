@@ -249,7 +249,9 @@ color: red;
     color: black;
    
 }
+/*test*/
 .TowaryF{
+    display: none;
     width: 600px;
     height: 200px;
 }
