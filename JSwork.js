@@ -250,20 +250,37 @@ towar={
     /* При натисканні на кнопку замовити */
     let zamovyty = document.getElementById('zamovyty');
     zamovyty.onclick=()=>{
+        /*Якщо поля не заповнені */
         if(inputImya.value==''||inputNomer.value==''||inputEmaile.value==''){
         console.log('Zapovnit vse formy');
         }else{
+            /*Виводить данні ПІБ номер емейл*/
         console.log(inputImya.value);
         console.log(inputNomer.value);
         console.log(inputEmaile.value);
+        /* ------------Тест------------ */
+        /* Доступ до новоъ перехыдноъ форми */
+        let NameFromForm = document.getElementById('PIBF');
+        let NumberFromForm = document.getElementById('NumberF');
+        let EmailFromForm = document.getElementById('EmailF');
+        let TowaryFromForm = document.getElementById('TowaryF');
+        
+        /*присвоєння новій нормальній формі -значення динамічної форми */
+        NameFromForm.value= inputImya.value
+        NumberFromForm.value= inputNomer.value;
+        EmailFromForm.value= inputEmaile.value;
+
         for(locI=1;locI<localStorage.length/4;locI++){
+            /* Виводить в консоль елементи з local storage */
         console.log(localStorage.getItem('towar'+locI+'- Name'));
         console.log(localStorage.getItem('towar'+locI+'- Type'));
         console.log(localStorage.getItem('towar'+locI+'- Kilkist'));
         console.log(localStorage.getItem('towar'+locI+'- Cost'));
         console.log(localStorage.getItem('towar'+locI));
-
+        /* Заповнює textaera товарами*/
+        TowaryFromForm.value = TowaryFromForm.value+('   |-|-|Товар- '+ locI +' | Назва: '+localStorage.getItem('towar'+locI+'- Name')+' |  Тип: '+localStorage.getItem('towar'+locI+'- Type')+' | Кількість: '+localStorage.getItem('towar'+locI+'- Kilkist')+' | Вартість: '+localStorage.getItem('towar'+locI+'- Cost'));
         }
+        /*-----Вже не Тест----- */
         form.style.display='none';
         localStorage.clear();
         }
