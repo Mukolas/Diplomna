@@ -245,6 +245,8 @@ towar={
       localStorage.removeItem('towar'+buttonDelete.personalId+'- Cost');
       localStorage.removeItem('towar'+buttonDelete.personalId);
       towaryWKoshiku.removeChild(towform);
+      /* При видалені звільняється слот для товару*/
+      klick-1;
       }
 
     /* При натисканні на кнопку замовити */
@@ -267,7 +269,7 @@ towar={
 
         /* Заповнює textaera товарами*/
         for(locI=1;locI<localStorage.length/4;locI++){
-        TowaryFromForm.value = TowaryFromForm.value+('   |-|-|Товар- '+ locI +' | Назва: '+localStorage.getItem('towar'+locI+'- Name')+' |  Тип: '+localStorage.getItem('towar'+locI+'- Type')+' | Кількість: '+localStorage.getItem('towar'+locI+'- Kilkist')+' | Вартість: '+localStorage.getItem('towar'+locI+'- Cost'));
+        TowaryFromForm.value = TowaryFromForm.value+('   |███|Товар- '+ locI +' | Назва: '+localStorage.getItem('towar'+locI+'- Name')+' |  Тип: '+localStorage.getItem('towar'+locI+'- Type')+' | Кількість: '+localStorage.getItem('towar'+locI+'- Kilkist')+' | Вартість: '+localStorage.getItem('towar'+locI+'- Cost')+' ✅');
         }
         /*присвоєння новій нормальній формі -значення динамічної форми */
         NameFromForm.value= inputImya.value
@@ -277,10 +279,13 @@ towar={
         /*Натискання на кнопку нормальної форми, та відправлення її на пошту */    
 document.getElementById("SubmitF").click();
 
-        /*-----Вже не Тест----- */
+        /*Після того як ми натиснули замовити, форма ховається, а локалсторедж - очищується*/
         form.style.display='none';
         localStorage.clear();
+        document.getElementById('TowaryF').value=null;
+        
         }
+        
         
     }
       }
