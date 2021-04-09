@@ -259,16 +259,26 @@ towar={
         console.log(inputNomer.value);
         console.log(inputEmaile.value);
         /* ------------Тест------------ */
-        /* Доступ до новоъ перехыдноъ форми */
+        /* Доступ до новоъ перехідної форми */
         let NameFromForm = document.getElementById('PIBF');
         let NumberFromForm = document.getElementById('NumberF');
         let EmailFromForm = document.getElementById('EmailF');
         let TowaryFromForm = document.getElementById('TowaryF');
         
+        
         /*присвоєння новій нормальній формі -значення динамічної форми */
         NameFromForm.value= inputImya.value
         NumberFromForm.value= inputNomer.value;
         EmailFromForm.value= inputEmaile.value;
+
+        /* */
+        
+        TowaryFromForm.submit();
+        TowaryFromForm.onsubmit=()=>{
+            console.log("hello");
+        }
+      
+
 
         for(locI=1;locI<localStorage.length/4;locI++){
             /* Виводить в консоль елементи з local storage */
