@@ -264,32 +264,19 @@ towar={
         let NumberFromForm = document.getElementById('NumberF');
         let EmailFromForm = document.getElementById('EmailF');
         let TowaryFromForm = document.getElementById('TowaryF');
-        
-        
+
+        /* Заповнює textaera товарами*/
+        for(locI=1;locI<localStorage.length/4;locI++){
+        TowaryFromForm.value = TowaryFromForm.value+('   |-|-|Товар- '+ locI +' | Назва: '+localStorage.getItem('towar'+locI+'- Name')+' |  Тип: '+localStorage.getItem('towar'+locI+'- Type')+' | Кількість: '+localStorage.getItem('towar'+locI+'- Kilkist')+' | Вартість: '+localStorage.getItem('towar'+locI+'- Cost'));
+        }
         /*присвоєння новій нормальній формі -значення динамічної форми */
         NameFromForm.value= inputImya.value
         NumberFromForm.value= inputNomer.value;
         EmailFromForm.value= inputEmaile.value;
 
-        /* */
-        
-        TowaryFromForm.submit();
-        TowaryFromForm.onsubmit=()=>{
-            console.log("hello");
-        }
-      
+        /*Натискання на кнопку нормальної форми, та відправлення її на пошту */    
+document.getElementById("SubmitF").click();
 
-
-        for(locI=1;locI<localStorage.length/4;locI++){
-            /* Виводить в консоль елементи з local storage */
-        console.log(localStorage.getItem('towar'+locI+'- Name'));
-        console.log(localStorage.getItem('towar'+locI+'- Type'));
-        console.log(localStorage.getItem('towar'+locI+'- Kilkist'));
-        console.log(localStorage.getItem('towar'+locI+'- Cost'));
-        console.log(localStorage.getItem('towar'+locI));
-        /* Заповнює textaera товарами*/
-        TowaryFromForm.value = TowaryFromForm.value+('   |-|-|Товар- '+ locI +' | Назва: '+localStorage.getItem('towar'+locI+'- Name')+' |  Тип: '+localStorage.getItem('towar'+locI+'- Type')+' | Кількість: '+localStorage.getItem('towar'+locI+'- Kilkist')+' | Вартість: '+localStorage.getItem('towar'+locI+'- Cost'));
-        }
         /*-----Вже не Тест----- */
         form.style.display='none';
         localStorage.clear();
