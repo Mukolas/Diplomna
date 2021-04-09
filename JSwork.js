@@ -245,8 +245,6 @@ towar={
       localStorage.removeItem('towar'+buttonDelete.personalId+'- Cost');
       localStorage.removeItem('towar'+buttonDelete.personalId);
       towaryWKoshiku.removeChild(towform);
-      /* При видалені звільняється слот для товару*/
-      klick-1;
       }
 
     /* При натисканні на кнопку замовити */
@@ -256,12 +254,9 @@ towar={
         if(inputImya.value==''||inputNomer.value==''||inputEmaile.value==''){
         console.log('Zapovnit vse formy');
         }else{
-            /*Виводить данні ПІБ номер емейл*/
-        console.log(inputImya.value);
-        console.log(inputNomer.value);
-        console.log(inputEmaile.value);
-        /* ------------Тест------------ */
-        /* Доступ до новоъ перехідної форми */
+
+         
+        /* Доступ до нової перехідної форми */
         let NameFromForm = document.getElementById('PIBF');
         let NumberFromForm = document.getElementById('NumberF');
         let EmailFromForm = document.getElementById('EmailF');
