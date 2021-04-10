@@ -112,9 +112,11 @@ towar={
         cost: 500
     }
 ]
-fetch('https://my-json-server.typicode.com/Mukolas/Diplomna/posts')
-  .then(response => response.json())
-  .then(json => console.log(json))
+fetch('./db.json')
+  .then(value => value.json())
+  .then(value=> {
+      console.log(value);
+  });
 
 
 /*Функція створення товару */
