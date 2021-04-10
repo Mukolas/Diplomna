@@ -112,9 +112,9 @@ towar={
         cost: 500
     }
 ]
-fetch('https://github.com/Mukolas/Diplomna/blob/[main|master]/db.json')
+fetch('https://my-json-server.typicode.com/Mukolas/Diplomna/posts')
   .then(response => response.json())
-  .then(json => console.log(json.id))
+  .then(json => console.log(json))
 
 
 /*Функція створення товару */
