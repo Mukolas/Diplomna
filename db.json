@@ -1,14 +1,39 @@
 {
-    "posts": [
-      { "id": 1, "title": "Post 1" },
-      { "id": 2, "title": "Post 222" },
-      { "id": 3, "title": "Post 3" }
-    ],
-    "comments": [
-      { "id": 1, "body": "some comment", "postId": 1 },
-      { "id": 2, "body": "some comment", "postId": 1 }
-    ],
-    "profile": {
-      "name": "typicode"
+    "towasr":[
+        {
+        "imege": "https://img01.flagma.ua/photo/ognetushitel-op-5-12081951_medium.jpg" ,
+        "name": "vognegasnik AF-3000",
+        "type": "Протипожежні",
+        "cost": 300
     }
+    ,
+    {
+        "imege": "https://img01.flagma.ua/photo/ognetushitel-op-5-12081951_medium.jpg" ,
+        "name": "vognegasnik AF-3000",
+        "type": "Протипожежні",
+        "cost": 300
+    }
+    ,
+    {
+        "imege": "https://img01.flagma.ua/photo/ognetushitel-op-5-12081951_medium.jpg" ,
+        "name": "vognegasnik AF-3000",
+        "type": "Протипожежні",
+        "cost": 300
+    }
+    ,
+    {
+        "imege": "https://img01.flagma.ua/photo/ognetushitel-op-5-12081951_medium.jpg" ,
+        "name": "vognegasnik AF-3000",
+        "type": "Протипожежні",
+        "cost": 300
+    }
+    ,
+    {
+        "imege": "https://img01.flagma.ua/photo/ognetushitel-op-5-12081951_medium.jpg" ,
+        "name": "vognegasnik AF-3000",
+        "type": "Протипожежні",
+        "cost": 300
+    }
+    
+    ]
   }
