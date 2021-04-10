@@ -112,7 +112,7 @@ towar={
         cost: 500
     }
 ]
-fetch('https://github.com/Mukolas/Diplomna/blob/main/Tow.json')
+fetch('https://github.com/Mukolas/Diplomna/blob/[main|master]/db.json')
   .then(response => response.json())
   .then(json => console.log(json.id))
 
