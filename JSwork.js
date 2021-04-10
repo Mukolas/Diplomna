@@ -120,9 +120,10 @@ fetch('https://my-json-server.typicode.com/Mukolas/Diplomna/towasr')
 .then((response) => response.json())
 .then((json) => {
     
-    for(i=0;i<skladPPT.length;i++){
-        let jname = json[i+1].name;
+    for(i=0;i<json.length;i++){
+        let jname = json[i].name;
     console.log(jname);
+    console.log(json.length);
    
 
      let mistsePPT = document.createElement('div');
@@ -135,16 +136,16 @@ fetch('https://my-json-server.typicode.com/Mukolas/Diplomna/towasr')
      mistsePPT.style.borderRadius ='10px';
      mistsePPT.style.padding='6px';
      mistsePPT.style.float='left';
-     if(skladPPT[i].type =="Протипожежні"){
+     if(json[i].type =="Протипожежні"){
      mainDivOne.appendChild(mistsePPT);
-     }else if(skladPPT[i].type =="Протигазові"){
+     }else if(json[i].type =="Протигазові"){
         mainDivTwo.appendChild(mistsePPT);
-     }else if(skladPPT[i].type =="Загальнобезпечні"){
+     }else if(json[i].type =="Загальнобезпечні"){
         mainDivThree.appendChild(mistsePPT);
-     }else if(skladPPT[i].type =="Пакет"){
+     }else if(json[i].type =="Пакет"){
         packetBezpekiDiv.appendChild(mistsePPT);
      }
-     mistsePPT.innerHTML = `<img src=${ skladPPT[i].imege}><br> Назва: ${skladPPT[i].name} <br> Тип: ${skladPPT[i].type} <br> Ціна: ${skladPPT[i].cost} <br> `;
+     mistsePPT.innerHTML = `<img src=${ json[i].imege}><br> Назва: ${json[i].name} <br> Тип: ${json[i].type} <br> Ціна: ${json[i].cost} <br> `;
     
      /* Інпут*/
      let numb = document.createElement('input');
@@ -165,12 +166,12 @@ fetch('https://my-json-server.typicode.com/Mukolas/Diplomna/towasr')
      razom.style.margin='5px';
      razom.style.color='orange';
      razom.style.textDecoration='underline';
-     razom.innerHTML=('Разом: '+numb.value*skladPPT[i].cost);
+     razom.innerHTML=('Разом: '+numb.value*json[i].cost);
      /*переоголошуєм змінні */
-     let cost =skladPPT[i].cost;
-     let type = skladPPT[i].type;
-     let name = skladPPT[i].name;
-     let tow = skladPPT[i];
+     let cost =json[i].cost;
+     let type = json[i].type;
+     let name = json[i].name;
+     let tow = json[i];
      /*функції при зміні кількості товару */
      numb.onkeyup=function () {
         razomcost= numb.value * cost;
