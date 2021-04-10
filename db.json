@@ -55,7 +55,13 @@
         "type": "Протипожежні",
         "cost": 300
     }
-    
+    ,
+    {
+        "imege": "https://img01.flagma.ua/photo/ognetushitel-op-5-12081951_medium.jpg" ,
+        "name": "vognegasnik AF-3000",
+        "type": "Протипожежні",
+        "cost": 300
+    }
     
     ]
   }
