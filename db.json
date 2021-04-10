@@ -55,13 +55,7 @@
         "type": "Загальнобезпечні",
         "cost": 8000
     }
-    ,
-    {
-        "imege": "https://avpharma.com.ua/wp-content/uploads/2020/01/first-aid-kit-medical-automobile-ama-1-in-a-red-bag-600x600.jpg" ,
-        "name": "Автомобільна аптечка AMA-1",
-        "type": "Пакет",
-        "cost": 500
-    }
+    
     
     ]
   }

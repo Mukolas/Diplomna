@@ -55,76 +55,16 @@ katP3.onmouseout=()=>{
     katP3.style.backgroundColor ='white';
 }
 
-/*Склад  товарів */
-let skladPPT=[
-towar={
-    imege: 'https://img01.flagma.ua/photo/ognetushitel-op-5-12081951_medium.jpg' ,
-    name: "vognegasnik AF-3000",
-    type: 'Протипожежні',
-    cost: 300
-}
-,
-towar={
-    imege: 'https://torgeat.ru/goodimg/_eat/52/832252/98/4716898-ognetushitel-op-4.jpeg' ,
-    name: "vognegasnik ARos-5",
-    type: 'Протипожежні',
-    cost: 500
-}
-,
-towar={
-    imege: 'https://cdn.shopify.com/s/files/1/0442/5567/4523/products/IMG_1670_1024x1024@2x.jpg?v=1599839033' ,
-    name: "Шланг червоний ТТ-200",
-    type: 'Протипожежні',
-    cost: 150
-}
-,
-towar={
-    imege: 'https://101.net.ua/image/cache/800-700/data/new2019/setka-vsasyvayushchaya-sv-80-2306.png' ,
-    name: "Сітка всмоктуюча",
-    type: 'Протипожежні',
-    cost: 700
-}
-,
-towar={
-    imege: 'https://101.net.ua/image/cache/800-700/data/new2019/verevka-pozharnaya-spasatelnaya-vps-50-2375.jpg' ,
-    name: "Шнур рятувальний",
-    type: 'Протипожежні',
-    cost: 450   
-}
-,
-    towar={
-        imege: 'https://i2.rozetka.ua/goods/22018079/74602224_images_22018079678.jpg' ,
-        name: "Датчик газу JKD 512COM",
-        type: 'Протигазові',
-        cost: 1000
-    }
-,
-    towar={
-        imege: 'https://i2.rozetka.ua/goods/16513977/ajax_000016461_images_16513977761.jpg' ,
-        name: "Сигналізація Ajax StarterKit",
-        type: 'Загальнобезпечні',
-        cost: 8000
-    },
-    towar={
-        imege: 'https://avpharma.com.ua/wp-content/uploads/2020/01/first-aid-kit-medical-automobile-ama-1-in-a-red-bag-600x600.jpg' ,
-        name: "Автомобільна аптечка AMA-1",
-        type: 'Пакет',
-        cost: 500
-    }
-]
 
 
-
-/*Функція створення товару */
+/*Взяття товарів з бд */
 fetch('https://my-json-server.typicode.com/Mukolas/Diplomna/towasr')
 .then((response) => response.json())
 .then((json) => {
-    
+
+   /*Функція створення товару */    
     for(i=0;i<json.length;i++){
-        let jname = json[i].name;
-    console.log(jname);
-    console.log(json.length);
-   
+     
 
      let mistsePPT = document.createElement('div');
      mistsePPT.style.display='inline-block'
