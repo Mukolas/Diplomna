@@ -112,7 +112,11 @@ towar={
         cost: 500
     }
 ]
+fetch('https://jsonplaceholder.typicode.com/todos/1')
+  .then(response => response.json())
+  .then(json => console.log(json.id))
 
+  
 /*Функція створення товару */
     
     for(i=0;i<skladPPT.length;i++){
