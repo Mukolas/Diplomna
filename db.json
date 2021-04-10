@@ -15,59 +15,52 @@
     }
     ,
     {
-        "imege": "https://img01.flagma.ua/photo/ognetushitel-op-5-12081951_medium.jpg" ,
-        "name": "vognegasnik AF-3000",
+        "imege": "https://torgeat.ru/goodimg/_eat/52/832252/98/4716898-ognetushitel-op-4.jpeg" ,
+        "name": "vognegasnik ARos-5",
         "type": "Протипожежні",
-        "cost": 300
+        "cost": 500
     }
     ,
     {
-        "imege": "https://img01.flagma.ua/photo/ognetushitel-op-5-12081951_medium.jpg" ,
-        "name": "vognegasnik AF-3000",
+        "imege": "https://cdn.shopify.com/s/files/1/0442/5567/4523/products/IMG_1670_1024x1024@2x.jpg?v=1599839033" ,
+        "name": "Шланг червоний ТТ-200",
         "type": "Протипожежні",
-        "cost": 300
+        "cost": 150
     }
     ,
     {
-        "imege": "https://img01.flagma.ua/photo/ognetushitel-op-5-12081951_medium.jpg" ,
-        "name": "vognegasnik AF-3000",
+        "imege": "https://101.net.ua/image/cache/800-700/data/new2019/setka-vsasyvayushchaya-sv-80-2306.png" ,
+        "name": "Сітка всмоктуюча",
         "type": "Протипожежні",
-        "cost": 300
+        "cost": 700
     }
     ,
     {
-        "imege": "https://img01.flagma.ua/photo/ognetushitel-op-5-12081951_medium.jpg" ,
-        "name": "vognegasnik AF-3000",
+        "imege": "https://101.net.ua/image/cache/800-700/data/new2019/verevka-pozharnaya-spasatelnaya-vps-50-2375.jpg" ,
+        "name": "Шнур рятувальний",
         "type": "Протипожежні",
-        "cost": 300
+        "cost": 450
     }
     ,
     {
-        "imege": "https://img01.flagma.ua/photo/ognetushitel-op-5-12081951_medium.jpg" ,
-        "name": "vognegasnik AF-3000",
-        "type": "Протипожежні",
-        "cost": 300
+        "imege": "https://i2.rozetka.ua/goods/22018079/74602224_images_22018079678.jpg" ,
+        "name": "Датчик газу JKD 512COM",
+        "type": "Протигазові",
+        "cost": 1000
     }
     ,
     {
-        "imege": "https://img01.flagma.ua/photo/ognetushitel-op-5-12081951_medium.jpg" ,
-        "name": "vognegasnik AF-3000",
-        "type": "Протипожежні",
-        "cost": 300
+        "imege": "https://i2.rozetka.ua/goods/16513977/ajax_000016461_images_16513977761.jpg" ,
+        "name": "Сигналізація Ajax StarterKit",
+        "type": "Загальнобезпечні",
+        "cost": 8000
     }
     ,
     {
-        "imege": "https://img01.flagma.ua/photo/ognetushitel-op-5-12081951_medium.jpg" ,
-        "name": "vognegasnik AF-3000",
-        "type": "Протипожежні",
-        "cost": 300
-    }
-    ,
-    {
-        "imege": "https://img01.flagma.ua/photo/ognetushitel-op-5-12081951_medium.jpg" ,
-        "name": "vognegasnik AF-3000",
-        "type": "Протипожежні",
-        "cost": 300
+        "imege": "https://avpharma.com.ua/wp-content/uploads/2020/01/first-aid-kit-medical-automobile-ama-1-in-a-red-bag-600x600.jpg" ,
+        "name": "Автомобільна аптечка AMA-1",
+        "type": "Пакет",
+        "cost": 500
     }
     
     ]
