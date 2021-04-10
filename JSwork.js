@@ -112,16 +112,19 @@ towar={
         cost: 500
     }
 ]
-fetch('./db.json')
-  .then(value => value.json())
-  .then(value=> {
-      console.log(value);
-  });
+
 
 
 /*Функція створення товару */
+fetch('https://my-json-server.typicode.com/Mukolas/Diplomna/towasr')
+.then((response) => response.json())
+.then((json) => {
     
     for(i=0;i<skladPPT.length;i++){
+        let jname = json[i+1].name;
+    console.log(jname);
+   
+
      let mistsePPT = document.createElement('div');
      mistsePPT.style.display='inline-block'
      mistsePPT.style.width = '257px';
@@ -320,6 +323,6 @@ document.getElementById("SubmitF").click();
 
     }
     
-
+});
 
 
